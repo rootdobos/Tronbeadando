@@ -24,7 +24,7 @@ namespace Tron
         DispatcherTimer Clock;
         static int MainWidth = 1000;
         static int MainHeight = 800;
-        static int speed = 30;
+        static int speed = 50;
         Player Player1;
         Player Player2;
         int Size = 5;
@@ -36,7 +36,7 @@ namespace Tron
             Player2 = new Player(MainWidth / 4 * 3, MainHeight / 2, "Red", "left");
             Clock.Interval = TimeSpan.FromMilliseconds(1000 / speed);
             Clock.Tick += Step;
-            Clock.IsEnabled = true;
+          //  Clock.IsEnabled = true;
         }
 
 
@@ -45,12 +45,12 @@ namespace Tron
         {
             Rectangle maker = new Rectangle();
             Rectangle maker2 = new Rectangle();
-            maker.Width = maker.Height = 5;
+            maker.Width = maker.Height = Size;
             maker.Fill = Brushes.Gold;
             Canvas.SetLeft(maker, Player1.MotorPos.X);
             Canvas.SetTop(maker, Player1.MotorPos.Y);
             cvArena.Children.Add(maker);
-            maker2.Width = maker2.Height = 5;
+            maker2.Width = maker2.Height = Size;
             maker2.Fill = Brushes.Red;
             Canvas.SetLeft(maker2, Player2.MotorPos.X);
             Canvas.SetTop(maker2, Player2.MotorPos.Y);
@@ -58,6 +58,11 @@ namespace Tron
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
+            if(e.Key==Key.Enter)
+            {
+                Clock.Start();
+                lbStartInstruction.Visibility = Visibility.Hidden;
+            }
             if (e.Key == Key.W && Player1.Direction != "down")
             { Player1.Direction = "up"; }
             else if (e.Key == Key.S && Player1.Direction != "up")
@@ -158,7 +163,6 @@ namespace Tron
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Make();
-            Clock.Start();
         }
 
        
