@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tron"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800
-        " Width="1000" KeyDown="Window_KeyDown">
+        Title="MainWindow" Height="900
+        " Width="1100" KeyDown="Window_KeyDown">
 
-    <Canvas x:Name="cvArena" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="1000" Height="800" Background="#FF3DA0BD" KeyDown="Window_KeyDown" Loaded="Window_Loaded"  />
+    <Canvas x:Name="cvArena" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="1000" Height="800" Background="#FF3DA0BD" KeyDown="Window_KeyDown" Loaded="Window_Loaded"  >
+        <Label x:Name="lbStartInstruction" Content="Press Enter to start the game"  VerticalContentAlignment="Center" Canvas.Left="366" Canvas.Top="184" Height="39" FontSize="22" />
+    </Canvas>
 
 </Window>
