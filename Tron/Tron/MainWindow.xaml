@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tron"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="800
+        " Width="1000" KeyDown="Window_KeyDown">
+
+    <Canvas x:Name="cvArena" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="1000" Height="800" Background="#FF3DA0BD" KeyDown="Window_KeyDown" Loaded="Window_Loaded"  />
+
 </Window>
